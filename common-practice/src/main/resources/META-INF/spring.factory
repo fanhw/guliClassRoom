@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.fhw.guliclassroom.common.practice.starter.DemoAutoConfiguration
