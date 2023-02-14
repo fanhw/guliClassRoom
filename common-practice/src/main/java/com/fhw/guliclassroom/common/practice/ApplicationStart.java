@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
  * @version 1.0
  * @date 2023-01-19 11:00
  */
-//@SpringBootApplication(exclude = {RedisAutoConfiguration.class})
 @SpringBootApplication
 @MapperScan("com.fhw.guliclassroom.common.practice.mapper")
 public class ApplicationStart {
