@@ -1,29 +1,37 @@
 spring:
   application:
     name: guliclassroom
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8
-    username: root
-    password: root
-  redis:
-    host: 127.0.0.1
-    port: 6379
-server:
-  port: 9527
-  servlet:
-    context-path: /fhw
+
+  profiles:
+    active:
+      - dev
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8
+#    username: root
+#    password: root
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#server:
+#  port: 9527
+#  servlet:
+#    context-path: /fhw
 
 
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    db-config:
-      logic-not-delete-value: 0
-      logic-delete-value: 1
-      logic-delete-field: deleted
-com:
-  fhw:
-    name: fhw
-    version: 1.0.0
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  global-config:
+#    db-config:
+#      logic-not-delete-value: 0
+#      logic-delete-value: 1
+#      logic-delete-field: deleted
+#com:
+#  fhw:
+#    name: fhw
+#    version: 1.0.0
+#
+#
+
+

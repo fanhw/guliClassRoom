@@ -2,6 +2,7 @@ package com.fhw.guliclassroom.common.practice.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.fhw.guliclassroom.common.practice.entity.Student;
+import com.fhw.guliclassroom.common.practice.model.User;
 import org.springframework.stereotype.Repository;
 
 /**

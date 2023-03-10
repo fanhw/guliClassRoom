@@ -1,9 +1,15 @@
 package com.fhw.guliclassroom.common.practice;
 
+import com.alibaba.fastjson.JSON;
+import com.fhw.guliclassroom.common.practice.entity.User;
+import com.fhw.guliclassroom.common.practice.redis.RedisService;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -14,14 +20,28 @@ import java.util.stream.Collectors;
  */
 @SpringBootTest
 public class CommonTest {
+    private static final Logger logger = LoggerFactory.getLogger(CommonTest.class);
+
     @Test
     public void joinTest() {
-        // System.out.println("hello");
-        String s1 = "08:00,09:00";
-        String s2 = "";
-        String s3 = "20:00,21:00";
-        String collect = Arrays.asList(s1, s2, s3).stream().filter(StringUtils::isNotBlank)
-                .collect(Collectors.joining(","));
-        System.out.println("collect = " + collect);
+
+
     }
+
+    @Resource
+    private RedisService redisService;
+
+    @Test
+    public void contextLoads() {
+        //测试redis的string类型
+        redisService.setString("weichat", "程序员私房菜");
+        logger.info("我的微信公众号为：{}", redisService.getString("weichat"));
+
+        // 如果是个实体，我们可以使用json工具转成json字符串，
+        User user = new User("1111", "fhw", 18, "123456");
+        redisService.setString("userInfo", JSON.toJSONString(user));
+        logger.info("用户信息：{}", redisService.getString("userInfo"));
+    }
+
+
 }
